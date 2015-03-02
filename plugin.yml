@@ -4,3 +4,4 @@ description: Server Interface
 author: norway240
 website: http://norway240.com
 main: com.norway240.serverinterface.ServerInterface
+depend: [Vault]

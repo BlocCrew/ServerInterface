@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.text.DecimalFormat;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -50,9 +51,10 @@ public class ServerInterfaceServer {
 	
 	public String getOnlinePlayers(){
 		String players = "<ul>";
+		DecimalFormat df = new DecimalFormat("#.00");
 		for(Player p : Bukkit.getServer().getOnlinePlayers()){
 			String n = p.getName();
-			players += "<li><img src=\"https://minotar.net/avatar/"+n+"\" height=\"64px\">"+n+"</li>";
+			players += "<li><img src=\"https://minotar.net/avatar/"+n+"\" height=\"64px\">"+n+": Ⓑ"+df.format(ServerInterface.econ.getBalance(p))+"</li>";
 		}
 		players += "</ul>";
 		return players;
